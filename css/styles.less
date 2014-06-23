@@ -1,5 +1,5 @@
 /* ---------- RESET ---------- */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -27,11 +27,11 @@ time, mark, audio, video {
 
 input {
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -80,7 +80,7 @@ a {
 
 p a, span a, h5 a {
 	color: @link-color;
-	
+
 	&:hover {
 		color: @dark-color;
 	}
@@ -134,7 +134,7 @@ p a, span a, h5 a {
 .transition (@duration: 0.2s, @ease: ease-out) {
 	-webkit-transition: all @duration @ease;
 	-moz-transition: all @duration @ease;
-	-o-transition: all @duration @ease; 
+	-o-transition: all @duration @ease;
 	transition: all @duration @ease;
 }
 
@@ -150,3 +150,70 @@ p a, span a, h5 a {
 @body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @gray-color: #F1F1F1;
 
+
+/* ----------- GENERAL ----------*/
+body {
+	font: 14px/21px @body-font;
+	color: @text-color;
+	background: transparent url('../images/main-bg.png') 0 0;
+}
+
+p, ul, ol {
+	margin-bottom: 1.5em;
+}
+
+p a {
+	color: @link-color;
+	font-weight: bold;
+}
+
+
+
+
+/*----------- HEADER ----------*/
+.main-header {
+	background: white;
+	border-bottom: 1px solid @border-color;
+	-webkit-box-shadow: inset 0px -5px 0px @bevel-color, 0px 0px 5px @border-color;
+	box-shadow: inset 0px -5px 0px @bevel-color, 0px 0px 5px @border-color;
+	margin-bottom: 3em;
+}
+
+.top-menu-container {
+	background: @dark-color url('../images/top-container-bg.gif') 0 0;
+
+	.top-menu-navigation ul {
+		> li {
+			float: left;
+
+			a {
+				color: @light-text-color;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 12px;
+				height: 42px;
+				line-height: 42px;
+				margin-right: 1em;
+				position: relative;
+				padding-right: 1em;
+
+				&:hover {
+					color: white;
+				}
+
+				&::before {
+					content: '|';
+					position: absolute;
+					font-size: 10px;
+					right: 0;
+					color: darken(@light-text-color, 30%)
+				}
+			}
+
+			ul {
+				display: none;
+			}
+		}
+
+	}
+}
