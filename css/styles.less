@@ -78,7 +78,7 @@ a {
 	text-decoration: none;
 }
 
-p a, span a, h5 a {
+p a, span a {
 	color: @link-color;
 
 	&:hover {
@@ -86,13 +86,13 @@ p a, span a, h5 a {
 	}
 }
 
-// .fancy-hr {
-// 	border: none;
-// 	height: 1px;
-// 	background: lighten(@border-color, 5%);
-// 	.box-shadow(0px, 0px, 7px, @border-color);
-// 	margin: 3em 0;
-// }
+.fancy-hr {
+	border: none;
+	height: 1px;
+	background: lighten(@border-color, 5%);
+	.box-shadow(0px, 0px, 7px, @border-color);
+	margin: 3em 0;
+}
 
 
 
@@ -396,13 +396,14 @@ h1 {
 
 /*---------------  ARTICLES   ----------------*/
 .articles {
+	padding-top: 3em;
 	background: white;
 	border: 1px solid @bevel-color;
 	-webkit-box-shadow: inset 5px 5px 0px @bevel-color, inset -5px -5px 0 @bevel-color, 0px 0px 5px @border-color;
 	box-shadow: inset 5px 5px 0px @bevel-color, inset -5px -5px 0 @bevel-color, 0px 0px 5px @border-color;
 
 	article {
-		padding: 0 3em;
+		padding: 0 2em;
 
 		.article-meta-categories {
 			font-size: 12px;
@@ -428,13 +429,18 @@ h1 {
 		.article-meta-extra {
 			font-size: 12px;
 			color: @light-text-color;
-			height: 42px;
-			line-height: 42px;
+			height: 21px;
+			line-height: 21px;
 			font-style: italic;
 
 			a {
 				font-weight: normal;
 			}
+		}
+
+		h1 + .article-meta-extra {
+			height: 42px;
+			line-height: 42px;
 		}
 
 		.article-meta-comments {
@@ -457,9 +463,63 @@ h1 {
 			margin-right: 2em;
 
 			img {
+				display: block;
 				border: 1px solid @border-color;
 				.box-shadow(0px, 0px, 5px, @border-color);
 			}
+		}
+	}
+
+	.post-format-quote {
+		float: right;
+		width: 42px;
+		height: 42px;
+		background: transparent url('../images/quote-format-icon.png') center center no-repeat;
+		margin-top: 15px;
+	}
+
+	.quote-container {
+		background: @bevel-color;
+		border: 1px solid @border-color;
+		.box-shadow(0px, 0px, 5px, @border-color);
+		text-align: center;
+		padding: 3em;
+
+		blockquote {
+			font: 21px @serif-font;
+			color: @dark-color;
+			font-style: italic;
+		}
+
+		cite {
+			margin-top: 1.5em;
+			display: block;
+		}
+	}
+
+	.post-format-url {
+		float: right;
+		width: 42px;
+		height: 42px;
+		background: transparent url('../images/url-format-icon.png') center center no-repeat;
+		margin-top: 15px;
+	}
+
+	.url-container {
+		background: @bevel-color;
+		border: 1px solid @border-color;
+		.box-shadow(0px, 0px, 5px, @border-color);
+		text-align: center;
+		padding: 3em;
+
+		p {
+			font-size: 21px;
+			color: @dark-color;
+		}
+
+		span {
+			margin-top: 1.5em;
+			display: block;
 		}
 	}
 }
