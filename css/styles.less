@@ -183,6 +183,13 @@ h1 {
 	font-family: @heading-font;
 }
 
+h4 {
+	font-size: 16px;
+	line-height: 42px;
+	height: 42px;
+	font-family: @heading-font;
+}
+
 
 
 /*----------- HEADER ----------*/
@@ -522,5 +529,139 @@ h1 {
 			display: block;
 		}
 	}
+
+	.articles-nav {
+		padding: 0 2em;
+		margin-top: -1.5em;
+
+		.articles-nav-prev {
+			float: left;
+		}
+
+		.articles-nav-next {
+			float: right;
+		}
+	}
 }
+
+
+
+
+/* ---------- SIDEBAR ---------- */
+.sidebar-widget {
+	border-bottom: 1px solid @border-color;
+	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
+	font-size: 12px;
+
+	ul {
+		li {
+			ul {
+				margin-left: 2em;
+				margin-bottom: 0;
+
+				li {
+					position: relative;
+					padding-left: 1em;
+
+					&::before {
+						content: "-";
+						position: absolute;
+						left: 0;
+					}
+				}
+			}
+
+			a {
+				color: @link-color;
+
+				&:hover {
+					color: @dark-color;
+				}
+			}
+		}
+	}
+}
+
+.social-icons {
+	li {
+		float: left;
+		margin: 0 10px 10px 0;
+	}
+
+	.digg {
+		background: transparent url('../images/social/digg.png') center center no-repeat;
+		height: 32px;
+		width: 32px;
+		display: block;
+	}
+
+	.facebook {
+		background: transparent url('../images/social/facebook.png') center center no-repeat;
+		height: 32px;
+		width: 32px;
+		display: block;
+	}
+
+	.twitter {
+		background: transparent url('../images/social/twitter.png') center center no-repeat;
+		height: 32px;
+		width: 32px;
+		display: block;
+	}
+}
+
+
+.ad-125 {
+	li {
+		width: 125px;
+		height: 125px;
+		float: left;
+		margin: 0 20px 20px 0;
+
+		&.alt {
+			margin-right: 0;
+		}
+	}
+}
+
+.ad-260 {
+	li {
+		width: 260px;
+		margin: 0 5px 10px 5px;
+
+		&.alt {
+			margin-right: 0;
+		}
+	}
+}
+
+
+
+
+
+/* ---------- FORMS ---------- */
+form {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"] {
+		border: 1px solid @border-color;
+		height: 42px;
+		.box-shadow(0px, 0px, 5px, @border-color);
+		padding: 1em;
+		width: 100%;
+	}
+}
+
+#search-form {
+	input[type="text"] {
+		background: white url('../images/search-icon.png') 1em center no-repeat;
+		padding-left: 3em;
+	}
+}
+
+
+
+
+
 
