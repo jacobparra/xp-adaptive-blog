@@ -165,6 +165,7 @@ p, ul, ol {
 p a {
 	color: @link-color;
 	font-weight: bold;
+	.transition();
 }
 
 hr {
@@ -210,6 +211,8 @@ h4 {
 	margin-bottom: 1.5em;
 
 	.top-menu-navigation ul {
+		z-index: 999999;
+
 		> li {
 			float: left;
 			position: relative;
@@ -245,6 +248,8 @@ h4 {
 				transition: opacity 0.2s ease-in;
 
 				background: @dark-color;
+				border: 1px solid lighten(@dark-color, 10%);
+				border-bottom: 0;
 				position: absolute;
 				left: -1em;
 
@@ -274,7 +279,7 @@ h4 {
 
 						position: absolute;
 						left: 100%;
-						top: 0;
+						top: -1px;
 					}
 				}
 			}
@@ -416,9 +421,9 @@ h4 {
 			font-size: 12px;
 			text-transform: uppercase;
 			margin-bottom: 0;
-				font-weight: normal;
-				height: 42px;
-				line-height: 42px;
+			font-weight: normal;
+			height: 42px;
+			line-height: 42px;
 
 			a {
 				color: @light-text-color;
@@ -663,5 +668,55 @@ form {
 
 
 
+/* ---------- FOOTER ---------- */
+.footer-widget-area {
+	background: white;
+	border-top: 1px solid @border-color;
+	box-shadow: inset 0px 5px 0px @bevel-color, 0px 0px 5px @border-color;
 
+	padding: 3em 0;
+	margin-top: 3em;
 
+	.footer-sidebar-widget {
+		font-size: 12px;
+
+		ul {
+			li {
+				ul {
+					margin-left: 2em;
+					margin-bottom: 0;
+
+					li {
+						position: relative;
+						padding-left: 1em;
+
+						&::before {
+							content: "-";
+							position: absolute;
+							left: 0;
+						}
+					}
+				}
+
+				a {
+					color: @link-color;
+
+					&:hover {
+						color: @dark-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+.copyright-container {
+	background: @bevel-color;
+	border-top: 1px solid @border-color;
+	padding-top: 1.5em;
+	font-size: 12px;
+
+	.top-link-footer {
+		float: right;
+	}
+}
